@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Sahte Doğum Tarihi Oluşturucu V1</title>
+  <script>
+    function rastgeleDogumTarihi() {
+      const yil = Math.floor(Math.random() * (2009 - 1980 + 1)) + 1980; // 1980–2009 arası
+      const ay = String(Math.floor(Math.random() * 12) + 1).padStart(2, '0');
+      const gun = String(Math.floor(Math.random() * 28) + 1).padStart(2, '0');
+      document.getElementById("dogumTarihi").value = `${yil}-${ay}-${gun}`;
+    }
+  </script>
+</head>
+<body onload="rastgeleDogumTarihi()">
+  <h2>Sahte Doğum Tarihi Oluşturucu</h2>
+  <form>
+    <label for="dogumTarihi">Doğum Tarihiniz:</label>
+    <input type="date" id="dogumTarihi" name="dogumTarihi"><br><br>
+    <input type="submit" value="Gönder">
+    <button type="button" onclick="rastgeleDogumTarihi()">Yenile 🔄</button>
+  </form>
+  
+  
+</body>
+</html>
